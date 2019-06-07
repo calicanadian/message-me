@@ -1,0 +1,15 @@
+.ui.inverted.small.menu
+  .ui.container
+    = link_to 'Chatroom', root_url, class: 'item'
+    = link_to 'Messages', '', class: 'item'
+    .right.menu
+      .ui.dropdown.item
+        Account
+        %i.dropdown.icon
+        .menu
+          = link_to 'Log Out', '', class: 'item'
+          = link_to 'Log In', '', class: 'item'
+          = link_to 'Sign Up', '', class: 'item'
+      .item
+        .ui.primary.button
+          Sign Up

@@ -7,26 +7,12 @@
     .ui.fluid.raised.card.chatbox
       .content
         .ui.feed
-          .event
-            .content
-              .summary
-                %em Elliot Fu:
-                Test message
-          .event
-            .content
-              .summary
-                %em Stevie Feliciano:
-                Test message
-          .event
-            .content
-              .summary
-                %em Helen Troy:
-                Test message
-          .event
-            .content
-              .summary
-                %em Christian Rocha:
-                Test message
+          - @messages.each do |message|
+            .event
+              .content
+                .summary
+                  %em= "#{message.user.username}:"
+                  = message.body
       .extra.content
         %form.ui.reply.form
           .field

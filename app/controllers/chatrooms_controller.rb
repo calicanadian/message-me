@@ -5,6 +5,7 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms.json
   def index
     @chatrooms = Chatroom.all
+    @messages = Message.all.order(:id)
   end
 
   # GET /chatrooms/1

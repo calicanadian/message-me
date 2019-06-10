@@ -9,11 +9,12 @@
         .ui.feed
           = render @messages
       .extra.content
-        %form.ui.reply.form
+        = form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path) do |f|
           .field
             .ui.fluid.icon.input
-              %input{type: "text", placeholder: "Enter a message..."}
-              %i.bordered.inverted.blue.edit.icon
+              = f.text_field :body, placeholder: "Enter a message..."
+              = f.button do
+                %i.bordered.inverted.blue.edit.icon
   .four.wide.column
     .ui.fluid.raised.card.chatbox
       .content

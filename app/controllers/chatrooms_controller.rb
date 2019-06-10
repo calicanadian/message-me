@@ -3,6 +3,7 @@ class ChatroomsController < ApplicationController
 
   def index
     @chatrooms = Chatroom.all
+    @message = Message.new
     @messages = Message.all.order(:id)
   end
 end

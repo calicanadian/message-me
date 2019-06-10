@@ -1,0 +1,17 @@
+.ui.inverted.small.menu
+  .ui.container
+    = link_to 'Chatroom', root_url, class: 'item'
+    = link_to 'Messages', '', class: 'item'
+    .right.menu
+      .ui.dropdown.item
+        Account
+        %i.dropdown.icon
+        .menu
+          - if logged_in?
+            = link_to 'Log Out', logout_path, method: :delete, class: 'item'
+          - else
+            = link_to 'Log In', login_path, class: 'item'
+            = link_to 'Sign Up', '', class: 'item'
+      - if !logged_in?
+        .item
+          = link_to "Log in", login_path, class: "ui primary button"

@@ -5,7 +5,7 @@
 .ui.two.column.grid
   .twelve.wide.column
     .ui.fluid.raised.card.chatbox
-      .content
+      .content#messages
         .ui.feed#chatMessages
           = render @messages
       .extra.content
@@ -13,7 +13,7 @@
           .field
             .ui.fluid.icon.input
               = f.text_field :body, placeholder: "Enter a message..."
-              = f.button do
+              = f.button id: "submitMessage" do
                 %i.bordered.inverted.blue.edit.icon
   .four.wide.column
     .ui.fluid.raised.card.chatbox

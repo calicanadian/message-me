@@ -4,6 +4,6 @@ class ChatroomsController < ApplicationController
   def index
     @chatrooms = Chatroom.all
     @message = Message.new
-    @messages = Message.all.order(:id)
+    @messages = Message.custom_display
   end
 end

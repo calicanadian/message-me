@@ -1,19 +1,43 @@
-%h1 Listing chatrooms
+%h2.ui.center.aligned.icon.header
+  %i.circular.cocktail.icon.blue.inverted
+  Cheers
 
-%table
-  %thead
-    %tr
-      %th
-      %th
-      %th
-
-  %tbody
-    - @chatrooms.each do |chatroom|
-      %tr
-        %td= link_to 'Show', chatroom
-        %td= link_to 'Edit', edit_chatroom_path(chatroom)
-        %td= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Chatroom', new_chatroom_path
+.ui.two.column.grid
+  .twelve.wide.column
+    .ui.fluid.raised.card.chatbox
+      .content
+        .ui.feed
+          .event
+            .content
+              .summary
+                %em Elliot Fu:
+                Test message
+          .event
+            .content
+              .summary
+                %em Stevie Feliciano:
+                Test message
+          .event
+            .content
+              .summary
+                %em Helen Troy:
+                Test message
+          .event
+            .content
+              .summary
+                %em Christian Rocha:
+                Test message
+      .extra.content
+        %form.ui.reply.form
+          .field
+            .ui.fluid.icon.input
+              %input{type: "text", placeholder: "Enter a message..."}
+              %i.bordered.inverted.orange.edit.icon
+  .four.wide.column
+    .ui.fluid.raised.card.chatbox
+      .content
+        .ui.inverted.vertical.menu
+          %a.active.item
+            Chatroom
+          %a.item
+            Messages

@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create', as: "log_in"
   delete 'logout', to: 'sessions#destroy', as: "logout"
   post 'message', to: 'messages#create', as: 'message'
+
+  mouont ActionCable.server, at: '/cable'
 end

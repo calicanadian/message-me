@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :sessions
   root 'chatrooms#index'
   get 'login', to: 'sessions#new', as: "login"
+  post 'login', to: 'sessions#create', as: "log_in"
+  delete 'logout', to: 'sessions#destroy', as: "logout"
 end

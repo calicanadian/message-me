@@ -7,12 +7,7 @@
     .ui.fluid.raised.card.chatbox
       .content
         .ui.feed
-          - @messages.each do |message|
-            .event
-              .content
-                .summary
-                  %em= "#{message.user.username}:"
-                  = message.body
+          = render @messages
       .extra.content
         %form.ui.reply.form
           .field
